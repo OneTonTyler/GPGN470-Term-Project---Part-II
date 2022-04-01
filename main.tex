@@ -1,0 +1,72 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+
+% --- General Setup --- %
+\usepackage[margin=1in]{geometry}
+\usepackage{float}
+\usepackage{gensymb}
+
+% --- Works Cited --- %
+\usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
+\addbibresource{./sources.bib}
+
+% --- Dummy Text --- %
+\usepackage{lipsum}
+
+% --- Introduction Formatting --- %
+\renewcommand{\abstractname}{\Large{Introduction}}
+
+% --- Tables --- %
+\usepackage{multirow}
+\usepackage{array}
+
+\begin{document}
+% ---------------- %
+\input{titlepage}
+\begin{abstract}
+    \normalsize
+    \vspace{1em}
+    
+    The Cyclone Global Navigation Satellite Systems (CYGNSS) is a constellation consisting of eight micro-satellites originally intended to measure ocean wind speeds utilizing reflected GNSS signals from Global Positioning Satellites (GPS) \cite{NASA}. Recently, these reflected GNSS signals have shown potential to monitor global soil moisture (SM) levels as the signals are more sensitive to changes in SM than surface roughness and vegetation \cite{Global_SM}. The Delayed Doppler Mapping Instrument (DDMI) or SGR-ReSI is the primary instrumentation utilized to map the forward scattered GNSS signals \cite{DDMI_Overview}; it is capable of processing up to four reflections simultaneously and in real-time \cite{DDMI_Overview, DDMI_Summary}. In this paper, I will discuss an overview of the DDMI -- its history, capabilities, how it works, and display a delayed doppler map pulled from CYNGSS using level 1 data. 
+
+\end{abstract}
+
+% ---------------- %
+\section{An Overview of Delayed Doppler Mapped Instrumentation}
+
+
+% ---------------- %
+\section{Data Processing}
+
+% ---------------- %
+
+\clearpage
+\appendix
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\section{Instrumentation}
+
+\setlength{\tabcolsep}{20pt}
+\renewcommand{\arraystretch}{1.25}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{>{\bfseries}p{6cm} p{6cm}}
+        \multicolumn{2}{c}{Delay Doppler Mapping Instrument (DDMI)} \\
+        \hline
+        Instrument Technology & GNSS receiver \\ 
+        Resolution & 20-50 km \\
+        Geometry & Push-broom scanning \\
+        Waveband & 1.575 \\
+        Data Format & NetCDF \\
+        Data Access & Open \\
+        \hline
+    \end{tabular}
+    \caption{Caption \cite{DDMI_Summary}}
+    \label{tab:DDMI_Summary}
+\end{table}
+
+% Sources
+\clearpage
+\printbibliography
+
+\end{document}
