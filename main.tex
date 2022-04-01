@@ -5,6 +5,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{float}
 \usepackage{gensymb}
+\usepackage{graphicx}
 
 % --- Works Cited --- %
 \usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
@@ -45,10 +46,10 @@ To calculate wind speeds of ocean surface winds, a delayed doppler map is necess
 
 Since the DDMI processes reflected GNSS signals on board, there is no need to specific data processing software to clean the raw data. The satellite will transmit the rendered DDM as well as it GPS location and other physical and spacial parameters. The DDM can then be plotted with any Matlab library \cite{SGR-ReSi_Application}. However, it is important to understand the processing from within the DDMI. The DDMI works in four stages. \citeauthor{SGR-ReSi_Application} detail this process in as follows: Firstly the instrument receives the raw GPS signal from its zenith antenna. This signal provides a direct signal acquisition and signal tracking which is used to extract ephemerides (transit information). The combination of ephemerires and the tracking signal allows for the DDMI to calculate the reflection geometry. Finally, when the receiving reflected GNSS signal arrives, it is processed with the reflection geometry to generate a delayed doppler map. 
 
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \includegraphics{}
-    \caption{Caption}
+    \includegraphics[width=0.75\textwidth]{Resource_PDFs/DDM.png}
+    \caption{This is the delayed doppler map generated from the DDMI. This figure goes the raw sample, generated ddm, delay ddm, and doppler ddm of the analog power. The analog power is represents the true power that would have been measured \cite{Data}. Data provided from https://search.earthdata.nasa.gov/search/granules?p=C2146321631-POCLOUD.}
     \label{fig:Delayed Doppler Map}
 \end{figure}
 
